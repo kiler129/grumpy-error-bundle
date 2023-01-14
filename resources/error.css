@@ -1,0 +1,116 @@
+.gcs {
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+
+.gcr {
+    transform: rotate(-7deg);
+}
+
+.exception-illustration {
+    user-select: none;
+    opacity: 1;
+    flex-basis: 300px;
+}
+
+@keyframes catmove {
+    0% {
+        top: -221px;
+        opacity: 0.65;
+    }
+    100% {
+        top: -230px;
+        opacity: 1;
+    }
+}
+
+.exception-illustration img {
+    height: 163px;
+    position: relative;
+    top: -221px;
+    float: right;
+    animation-delay: 10s;
+    opacity: 0.65;
+    animation: catmove 5s ease-out alternate infinite;
+}
+
+/* speech bubble */
+.exception-illustration svg {
+    position: relative;
+    left: -37px;
+    top: -42px;
+    scale: .75;
+}
+
+/*.exception-illustration svg path { fill: #b0413e; }*/
+
+/* magically circle-fitting text in the bubble */
+.exception-illustration blockquote {
+    width: 158px;
+    height: 76px;
+    position: relative;
+    top: -153px;
+    left: 2px;
+    margin: 0;
+    border-radius: 50%;
+    text-align: center;
+    text-align-last: center;
+    hyphens: auto;
+    /*text-align: justify;*/
+    /*overflow: hidden;*/
+    color: rgba(255, 255, 255, 0.8);
+    /*outline: 1px solid fuchsia;*/
+    /*font-size: 0.8em;*/
+
+}
+
+.exception-illustration .gcrs {
+    display: contents;
+}
+
+.exception-illustration .gcrs:before,
+.exception-illustration .gcrs:after {
+    content: "";
+    width: 50%;
+    height: 100%;
+    float: left;
+    --shape-out: radial-gradient(farthest-side at var(--pos, 100%), transparent 100%, white);
+    shape-outside: var(--shape-out);
+}
+
+.exception-illustration .gcrs:after {
+    float: right;
+    --pos: 0;
+}
+
+/* no-petting sign */
+.gcnp {
+    position: relative;
+    top: -130px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    background: #ff413c;
+    width: fit-content;
+    padding: 4px;
+    transform: rotate(10deg);
+    left: 158px;
+    font-size: 1.4em;
+    opacity: 0;
+    transition: opacity 2s ease-out;
+}
+
+.exception-illustration img:hover {
+    opacity: 0.25 !important;
+}
+
+.gcnp:hover,
+.exception-illustration img:hover + .gcnp {
+    opacity: 1;
+    transition: none;
+}
+
+/*Safari hack for not fully supporting "fit in circle" */
+@supports (-webkit-hyphens:none) {
+    .exception-illustration blockquote {
+        width: 150px;
+        top: -150px;
+    }
+}

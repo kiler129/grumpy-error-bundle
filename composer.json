@@ -1,0 +1,19 @@
+{
+  "name": "noflash/grumpy-error-bundle",
+  "description": "Make your error pages just a bit more grumpy",
+  "type": "symfony-bundle",
+  "license": "proprietary",
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "require": {
+    "php": "^5.5|^7.0|^8.0",
+    "symfony/http-kernel": ">=v3.3.0",
+    "symfony/dependency-injection": ">=v3.3.0",
+    "symfony/web-profiler-bundle": ">=3.3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "NoFlash\\GrumpyError\\": "src/"
+    }
+  }
+}
