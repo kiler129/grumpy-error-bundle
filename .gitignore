@@ -1,0 +1,5 @@
+/.env.*.local
+/vendor/
+composer.lock
+composer.phar
+.idea/
